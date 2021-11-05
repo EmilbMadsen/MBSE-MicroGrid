@@ -76,6 +76,6 @@ solar.signals.values = [solarOneDay'];
 solar.signals.dimensions =1;
 
 wind.time = [];
-wind.signals.values = [wind'];
+wind.signals.values = [wind_data'];
 wind.signals.dimensions =1;
 
