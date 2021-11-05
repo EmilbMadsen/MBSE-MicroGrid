@@ -26,7 +26,7 @@ opts = setvaropts(opts, "hours1", "EmptyFieldRule", "auto");
 opts = setvaropts(opts, ["hours_continous", "summer_weekday", "summer_saturday", "summer_sunday", "trans_weekday", "trans_saturday", "trans_sunday", "winter_weekday", "winter_saturday", "winter_sunday"], "ThousandsSeparator", ",");
 
 % Import the data
-tbl = readtable("C:\Users\cm\OneDrive - Danmarks Tekniske Universitet\Model-Based Systems Eng\05 Models\OurModel\Consumer\c_table_new.txt", opts);
+tbl = readtable("Consumer\c_table_new.txt", opts);
 
 %% Convert to output type
 hours_string = tbl.hours1;
@@ -50,7 +50,6 @@ load('Eur_MWh.mat')
 clear opts tbl
 
 %% Create struct
-
  
 consumer_summer.time = [];
 consumer_summer.signals.values = [summer_weekday,summer_saturday,summer_sunday];
