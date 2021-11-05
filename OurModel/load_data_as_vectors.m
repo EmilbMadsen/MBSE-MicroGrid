@@ -43,7 +43,9 @@ winter_sunday = tbl.winter_sunday;
 
 
 %
-load('Eur_MWh.mat')
+
+load('Eur_Wh.mat')
+
 load('Solar\solarOneDay.mat')
 load('windturbine\wind_data.mat')
 
@@ -66,7 +68,7 @@ consumer_winter.signals.values = [winter_weekday,winter_saturday,winter_sunday];
 consumer_winter.signals.dimensions =3;
 
 price.time = [];
-price.signals.values = [Eur_MWh];
+price.signals.values = [Eur_Wh];
 price.signals.dimensions = 1;
 
 solar.time = [];
