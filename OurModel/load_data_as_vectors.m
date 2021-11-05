@@ -51,7 +51,6 @@ load('Solar\
 clear opts tbl
 
 %% Create struct
-
  
 consumer_summer.time = [];
 consumer_summer.signals.values = [summer_weekday,summer_saturday,summer_sunday];
