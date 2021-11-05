@@ -11,4 +11,4 @@ sim_time = 24;
 Rho = 1.204;
 Efficiency_wind = 0.4;
 length_of_wing = 44;
-A = 44*44*3.14;
+A = length_of_wing^2*3.14;
