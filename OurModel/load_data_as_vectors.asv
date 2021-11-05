@@ -47,7 +47,7 @@ winter_sunday = tbl.winter_sunday;
 load('Eur_Wh.mat')
 
 load('Solar\solarOneDay.mat')
-wind_data = load('windturbine\wind_data.mat');
+wind)load('windturbine\wind_data.mat')
 
 
 %% Clear temporary variables
