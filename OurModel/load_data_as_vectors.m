@@ -79,3 +79,11 @@ wind.time = [];
 wind.signals.values = [wind_data.wind'];
 wind.signals.dimensions =1;
 
+
+%% Plot
+
+figure()
+plot(out.priceTotal.time, out.priceTotal.Data)
+
+
+%area(out.priceTotal.time, out.priceTotal.Data)
