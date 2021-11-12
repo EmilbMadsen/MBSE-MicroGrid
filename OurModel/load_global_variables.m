@@ -1,3 +1,5 @@
+run('load_data_as_vectors.m');
+
 number_households = 200000;
 
 sim_time = 24;
