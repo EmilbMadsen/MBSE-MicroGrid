@@ -18,10 +18,10 @@ Area_panels = 700;%m2
 
 %% Hydrogen
 Max_H2_P_Input = 260000000;
-Min_H2_P_Input = 14000;
+Min_H2_P_Input = 1400;
 number_fuel_cells = 12; 
 fuel_cell_power_rating = 5000;
-Start_Tank_Fill_W = 10000; % [W]
+Start_Tank_Fill_L = 1000000; % [W]
 
 %% Battery
 Battery_Capacity = 10000; %[W]
