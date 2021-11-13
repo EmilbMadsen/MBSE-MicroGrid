@@ -21,10 +21,12 @@ Max_H2_P_Input = 260000000;
 Min_H2_P_Input = 1400;
 number_fuel_cells = 12; 
 fuel_cell_power_rating = 5000;
-Start_Tank_Fill_L = 1000000; % [W]
+Start_Tank_Fill_L = 5e6; % [W]
 
 %% Battery
-Battery_Capacity = 10000; %[W]
-minSOC = 5; %[%]
-maxSOC = 95; %[%]
+Battery_Capacity = 100000; %[W]
+minSOC = 60; %[%]
+maxSOC = 100; %[%]
 SOC_Start = 50; %[%] 
+T_bat = 30*60; % timeconstant for loading
+number_cars = 20000;
