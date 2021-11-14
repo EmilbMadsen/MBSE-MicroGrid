@@ -20,7 +20,7 @@ Area_panels = 700;%m2
 Max_H2_P_Input = 260000000;
 Min_H2_P_Input = 1400;
 number_fuel_cells = 12; 
-fuel_cell_power_rating = 5000;
+fuel_cell_power_rating = 12*5000;
 Start_Tank_Fill_L = 5e6; % [W]
 
 %% Battery
@@ -30,3 +30,4 @@ maxSOC = 100; %[%]
 SOC_Start = 50; %[%] 
 T_bat = 30*60; % timeconstant for loading
 number_cars = 20000;
+P_rating_bat = 10e3 * number_cars;
