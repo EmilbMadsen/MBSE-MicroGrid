@@ -26,7 +26,7 @@ opts = setvaropts(opts, "hours1", "EmptyFieldRule", "auto");
 opts = setvaropts(opts, ["hours_continous", "summer_weekday", "summer_saturday", "summer_sunday", "trans_weekday", "trans_saturday", "trans_sunday", "winter_weekday", "winter_saturday", "winter_sunday"], "ThousandsSeparator", ",");
 
 % Import the data
-tbl = readtable("Consumer\c_table_new.txt", opts);
+tbl = readtable("/Consumer/c_table_new.txt", opts);
 
 %% Convert to output type
 hours_string = tbl.hours1;
@@ -47,9 +47,14 @@ winter_sunday = tbl.winter_sunday;
 load('Price_Eur_MWh.mat'); %Eur/MW*h
 DKK_kWh = PriceMWh*7.44/1000; %DKK/kWh
 
-load('Solar\solarOneDay.mat')
-wind_data = load('windturbine\wind_data.mat');
-
+load('/Solar/solarOneDay.mat')
+wind_data = load('/windturbine/wind_data.mat');
+load('/Solar/SunSummer.mat')
+load('/Solar/SunFall.mat')
+load('//Solar/SunSpring.mat')
+load('/Solar/SunWinter.mat')
+load('/windturbine/Vind15nov.mat')
+load('/windturbine/Vind23sep.mat')
 
 %% Clear temporary variables
 clear opts tbl
@@ -75,6 +80,22 @@ price.signals.dimensions = 1;
 solar.time = [];
 solar.signals.values = [solarOneDay'];
 solar.signals.dimensions =1;
+
+SunSum.time = [];
+SunSum.signals.values = [SunSummer'];
+SunSum.signals.dimensions =1;
+
+SunWin.time = [];
+SunWin.signals.values = [SunWinter'];
+SunWin.signals.dimensions =1;
+
+SunFal.time = [];
+SunFal.signals.values = [SunFall'];
+SunFal.signals.dimensions =1;
+
+SunSpr.time = [];
+SunSpr.signals.values = [SunSpring'];
+SunSpr.signals.dimensions =1;
 
 wind.time = [];
 wind.signals.values = [wind_data.wind'];
@@ -108,4 +129,13 @@ EV_Distribution = [p-3600,EV_Charge_Behaviour'];
 EV_dist.time = [];
 EV_dist.signals.values = [EV_Charge_Behaviour'];
 EV_dist.signals.dimensions =1;
+
+WindFal.time = [];
+WindFal.signals.values = [Vind15nov];
+WindFal.signals.dimensions =1;
+
+WindOrk.time = [];
+WindOrk.signals.values = [Vind23sep];
+WindOrk.signals.dimensions =1;
+
 
