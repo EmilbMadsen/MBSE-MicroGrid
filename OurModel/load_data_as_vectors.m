@@ -79,3 +79,33 @@ solar.signals.dimensions =1;
 wind.time = [];
 wind.signals.values = [wind_data.wind'];
 wind.signals.dimensions =1;
+
+
+%% Car distribution
+
+i = zeros(60*60*31,1);
+j = 1:1:(60*60*31);
+
+k = [j',i];
+
+p = zeros(31,1);
+ u = 1;
+for q = 1:size(k,1)
+
+    if ~rem(k(q,1),60*60)
+        
+        p(u) = q; 
+        u=u+1;
+    end
+    
+end
+
+EV_Charge_Behaviour = [0.249, 0.22, 0.15, 0.100, 0.075, 0.063, 0.049, 0.050, 0.100, 0.152, 0.150, 0.142,0.125,0.125,0.127,0.125, 0.133, 0.140,0.147,0.150,0.175,0.200,0.232,0.247,0.249, 0.225, 0.150, 0.100, 0.075, 0.063,0.049];
+
+EV_Distribution = [p-3600,EV_Charge_Behaviour'];
+
+
+EV_dist.time = [];
+EV_dist.signals.values = [EV_Charge_Behaviour'];
+EV_dist.signals.dimensions =1;
+
