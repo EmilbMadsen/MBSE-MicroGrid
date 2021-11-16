@@ -23,6 +23,13 @@ number_fuel_cells = 12;
 fuel_cell_power_rating = 12*5000;
 Start_Tank_Fill_L = 5e6; % [W]
 
+P_electrolysis_max = 570000;
+P_electrolysis_min = 0;
+
+H2_out_max = 150;
+H2_out_min = 50;
+
+
 %% Battery
 Battery_Capacity = 100000; %[W]
 minSOC = 60; %[%]
