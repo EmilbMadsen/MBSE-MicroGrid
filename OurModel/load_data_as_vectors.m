@@ -26,7 +26,7 @@ opts = setvaropts(opts, "hours1", "EmptyFieldRule", "auto");
 opts = setvaropts(opts, ["hours_continous", "summer_weekday", "summer_saturday", "summer_sunday", "trans_weekday", "trans_saturday", "trans_sunday", "winter_weekday", "winter_saturday", "winter_sunday"], "ThousandsSeparator", ",");
 
 % Import the data
-tbl = readtable("Consumer\c_table_new.txt", opts);
+tbl = readtable("/Users/lassenielsen/Desktop/DTU/02223 Model-Based Systems Engineering Fall 21/MBSE-MicroGrid-main-My-Own/OurModel/Consumer/c_table_new.txt", opts);
 
 %% Convert to output type
 hours_string = tbl.hours1;
@@ -46,9 +46,14 @@ winter_sunday = tbl.winter_sunday;
 
 load('Eur_Wh.mat')
 
-load('Solar\solarOneDay.mat')
-wind_data = load('windturbine\wind_data.mat');
-
+load('/Users/lassenielsen/Desktop/DTU/02223 Model-Based Systems Engineering Fall 21/MBSE-MicroGrid-main-My-Own/OurModel/Solar/solarOneDay.mat')
+wind_data = load('/Users/lassenielsen/Desktop/DTU/02223 Model-Based Systems Engineering Fall 21/MBSE-MicroGrid-main-My-Own/OurModel/windturbine/wind_data.mat');
+load('/Users/lassenielsen/Desktop/DTU/02223 Model-Based Systems Engineering Fall 21/MBSE-MicroGrid-main-My-Own/OurModel/Solar/SunSummer.mat')
+load('/Users/lassenielsen/Desktop/DTU/02223 Model-Based Systems Engineering Fall 21/MBSE-MicroGrid-main-My-Own/OurModel/Solar/SunFall.mat')
+load('/Users/lassenielsen/Desktop/DTU/02223 Model-Based Systems Engineering Fall 21/MBSE-MicroGrid-main-My-Own/OurModel/Solar/SunSpring.mat')
+load('/Users/lassenielsen/Desktop/DTU/02223 Model-Based Systems Engineering Fall 21/MBSE-MicroGrid-main-My-Own/OurModel/Solar/SunWinter.mat')
+load('/Users/lassenielsen/Desktop/DTU/02223 Model-Based Systems Engineering Fall 21/MBSE-MicroGrid-main-My-Own/OurModel/windturbine/Vind15nov.mat')
+load('/Users/lassenielsen/Desktop/DTU/02223 Model-Based Systems Engineering Fall 21/MBSE-MicroGrid-main-My-Own/OurModel/windturbine/Vind23sep.mat')
 
 %% Clear temporary variables
 clear opts tbl
@@ -75,7 +80,31 @@ solar.time = [];
 solar.signals.values = [solarOneDay'];
 solar.signals.dimensions =1;
 
+SunSum.time = [];
+SunSum.signals.values = [SunSummer'];
+SunSum.signals.dimensions =1;
+
+SunWin.time = [];
+SunWin.signals.values = [SunWinter'];
+SunWin.signals.dimensions =1;
+
+SunFal.time = [];
+SunFal.signals.values = [SunFall'];
+SunFal.signals.dimensions =1;
+
+SunSpr.time = [];
+SunSpr.signals.values = [SunSpring'];
+SunSpr.signals.dimensions =1;
+
 wind.time = [];
 wind.signals.values = [wind_data.wind'];
 wind.signals.dimensions =1;
+
+WindFal.time = [];
+WindFal.signals.values = [Vind15nov];
+WindFal.signals.dimensions =1;
+
+WindOrk.time = [];
+WindOrk.signals.values = [Vind23sep];
+WindOrk.signals.dimensions =1;
 
