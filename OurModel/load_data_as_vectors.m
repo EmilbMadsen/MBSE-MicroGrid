@@ -26,7 +26,7 @@ opts = setvaropts(opts, "hours1", "EmptyFieldRule", "auto");
 opts = setvaropts(opts, ["hours_continous", "summer_weekday", "summer_saturday", "summer_sunday", "trans_weekday", "trans_saturday", "trans_sunday", "winter_weekday", "winter_saturday", "winter_sunday"], "ThousandsSeparator", ",");
 
 % Import the data
-tbl = readtable("/Consumer/c_table_new.txt", opts);
+tbl = readtable("Consumer/c_table_new.txt", opts);
 
 %% Convert to output type
 hours_string = tbl.hours1;
@@ -47,14 +47,14 @@ winter_sunday = tbl.winter_sunday;
 load('Price_Eur_MWh.mat'); %Eur/MW*h
 DKK_kWh = PriceMWh*7.44/1000; %DKK/kWh
 
-load('/Solar/solarOneDay.mat')
-wind_data = load('/windturbine/wind_data.mat');
-load('/Solar/SunSummer.mat')
-load('/Solar/SunFall.mat')
-load('//Solar/SunSpring.mat')
-load('/Solar/SunWinter.mat')
-load('/windturbine/Vind15nov.mat')
-load('/windturbine/Vind23sep.mat')
+load('Solar/solarOneDay.mat')
+wind_data = load('windturbine/wind_data.mat');
+load('Solar/SunSummer.mat')
+load('Solar/SunFall.mat')
+load('Solar/SunSpring.mat')
+load('Solar/SunWinter.mat')
+load('windturbine/Vind15nov.mat')
+load('windturbine/Vind23sep.mat')
 
 %% Clear temporary variables
 clear opts tbl
